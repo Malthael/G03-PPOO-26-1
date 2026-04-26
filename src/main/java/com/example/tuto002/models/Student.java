@@ -10,8 +10,17 @@ public class Student {
     
     @Id
     private int id;
+    private String studentCode;//15
     private String names;
     private String lastNames;
+
+    public String getStudentCode() {
+        return this.studentCode;
+    }
+
+    public void setStudentCode(String studentCode) {
+        this.studentCode = studentCode;
+    }
 
     public int getId() {
         return this.id;
