@@ -3,10 +3,12 @@ package com.example.tuto002.services;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.tuto002.models.Student;
 import com.example.tuto002.repositories.IStudentRepository;
 
+@Service
 public class StudentService {
     
     @Autowired
