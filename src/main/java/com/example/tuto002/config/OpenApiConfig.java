@@ -31,7 +31,7 @@ public class OpenApiConfig {
                                                 .description("Servidor Local de Desarrollo"))
                                 .externalDocs(new ExternalDocumentation()
                                                 .description("GitHub del Proyecto")
-                                                .url("https://github.com/Malthael/G03-PPOO-26-1"));
+                                                .url("https://github.com/Malthael/G03-PPOO-26-1/tree/diegoBurgosBranch"));
 
         }
 }
