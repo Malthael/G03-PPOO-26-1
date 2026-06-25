@@ -14,8 +14,8 @@ public class StudentService {
     @Autowired
     private IStudentRepository studentRepository;
 
-   // obtener todos
-    public ArrayList<Student> getAll(){
+   //obtener todos
+   public ArrayList<Student> getAll() {            
         // SELECT * FROM estudiante;
         return (ArrayList<Student>) studentRepository.findAll();
     }
@@ -31,7 +31,7 @@ public class StudentService {
         return existeEstudiante(student.getId()) ? studentRepository.save(student) : null;
     }
 
-    public void delete(){
+    public void delete(int i){
         //estudiante exista
         // si existe vamos a borrar  , sino retorna novedad
     }

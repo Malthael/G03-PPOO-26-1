@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.tuto002.models.Student;
 import com.example.tuto002.services.StudentService;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,26 +18,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/estudiante")
 public class StudentController {
 
-    @Autowired
+    @Autowired // crear instancia de la clase StudentService
     private StudentService studentService;
-    
-    @GetMapping
-    public ResponseEntity<ArrayList<Student>> GetAll(){
+
+    @GetMapping // Crear el Metodo GET para Obtener Todos los Estudiantes
+    public ResponseEntity<ArrayList<Student>> GetAll() {
         return ResponseEntity.ok(studentService.getAll());
     }
 
-    @PostMapping
-    public ResponseEntity<Student> save(@RequestBody Student student){
+    @PostMapping // Crear el Metodo POST para Guardar un Estudiante
+    public ResponseEntity<Student> save(@RequestBody Student student) {
         return ResponseEntity.ok(studentService.save(student));
     }
 
-    @PutMapping
-    public ResponseEntity<Student> update(@RequestBody Student student){
+    @PutMapping // Crear el Metodo PUT para Actualizar un Estudiante
+    public ResponseEntity<Student> update(@RequestBody Student student) {
         return ResponseEntity.ok(studentService.update(student));
     }
 
-    // Crear el Metodo para Eliminar un Estudiante por Id
+    @DeleteMapping // Crear el Metodo para Eliminar un Estudiante por Id
+    public ResponseEntity<String> delete(@RequestBody Student student) {
+        studentService.delete(student.getId());
+        return ResponseEntity.ok("Estudiante Eliminado");
+    }
 
-
-    
 }
